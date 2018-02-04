@@ -1,6 +1,6 @@
-# ["/algos"](https://bradfieldcs.com/algos/analysis/introduction/)
+# [/algos](https://bradfieldcs.com/algos/analysis/introduction/)
 
-## ["Introduction"](https://bradfieldcs.com/algos/analysis/introduction/)
+## [Introduction](https://bradfieldcs.com/algos/analysis/introduction/)
 
 ### The Big Picture
 
