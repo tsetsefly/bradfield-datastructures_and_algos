@@ -18,3 +18,22 @@ Will ```sum_to_n``` take longer to run given a larger n? Intuitively, the answer
 
 Will ```sum_to_n``` take the same amount of time to run each time it’s invoked with the same input? Intuitively the answer seems to be yes, since the same instructions are executed.
 
+```python
+import time
+
+def sum_to_n(n):
+    # record start time
+    start = time.time()
+
+    # run the function's code
+    total = 0
+    for i in range(n + 1):
+        total += i
+
+    # record end time
+    end = time.time()
+
+    return total, end - start
+```
+
+
