@@ -1,13 +1,3 @@
-# [The Binary Search](https://bradfieldcs.com/algos/searching/the-binary-search/)
-
-## Intro
-
-Finding things from an ordered list.
-
-Divide and conquer:
-* Divide the problem into smaller pieces, solve the smaller pieces, reassemble
-
-```python
 def binary_search(alist, item):
 	if not alist: # list is empty -- our base case
 		return False
@@ -23,11 +13,5 @@ def binary_search(alist, item):
 	return binary_search(alist[midpoint + 1:], item)
 
 testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42]
-binary_search(testlist, 3) # => False
-binary_search(testlist, 13) # => True
-```
-
-## Analysis of Binary Search
-
-Number of items left = n / 2^i (i is number of comparisons)
-
+print binary_search(testlist, 3) # => False
+print binary_search(testlist, 13) # => True
