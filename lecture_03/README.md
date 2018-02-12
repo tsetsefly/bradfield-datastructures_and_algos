@@ -177,4 +177,69 @@ rehash(pos) = (pos + skip) % sizeoftable
 
 ### Analysis of Hashing
 
+The most conceptually important part of analyzing hash functions is the load factor.
 
+# Sorting
+
+## O(n^2) in average cases
+1) Selection Sort
+2) Bubble Sort
+3) Insertion Sort
+
+## Merge Sort
+
+[Mycodeschool Video](https://www.youtube.com/watch?v=TzeBrDU-JaY)
+* O(nlogn) in worst case (time)
+1) First, break array A into two halves (L and R)
+2) Second, have incrementers for each array: k, i, j respectively for A, L, R
+3) Third, have nL and NR be the lengths of L and R
+
+```
+# will work through R & L until one is done
+while(i < nL && j < nR)
+{
+	if(L[i] <= R[j])
+	{
+		A[k] <- L[i]
+		i++
+	}
+	else
+	{
+		A[k] <- R[j]
+		j++
+	}
+	k++
+}
+# next two while loops will iterate through the remaining numbers in either R or L (only one will execute)
+while(i < nL)
+{
+	A[k] <- L[i]
+	i++
+	k++
+}
+while(j < nR)
+{
+	A[k] <- R[j]
+	j++
+	k++
+}
+# will result in a sorted array, A
+# can also break down sub-lists into further sub-lists until sub-list has 1 element (because its already sorted)
+# can handle this recursively...
+
+mergesort(A)
+{
+n <- length(A)
+if(n < 2)
+	return # array is sorted, termination condition
+mid <- n / 2
+left <- array of size(mid)
+right <- array of size(n - mid)
+
+
+
+}
+
+```
+
+## Quick Sort
