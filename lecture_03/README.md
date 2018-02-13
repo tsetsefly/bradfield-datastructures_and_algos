@@ -124,7 +124,7 @@ Example
 h(item = item % 11) # Or some other prime
 ```
 
-*Load factor*: number of slots that are filled after passing data through the hashing function.
+**Load factor**: number of slots that are filled after passing data through the hashing function.
 * Load factor = number of items / tablesize
 
 Unfortunately, hashing functions often lead to *collisions*. When the hashing function puts multiple datapoints into the same slot.
@@ -134,16 +134,16 @@ Optimizing for perfect hashing functions
 * Could increase the size of the hash table (increase memory utilization) to improve performance
 * Number of methods to optimize, Ex. Folding Method, Mid-square method
 
-*Folding Method*
+**Folding Method**
 * Dividing the item into equal sized pieces (except the last piece)
 * Add up the pieces to give the hash value
 * Dividing / modulo'ing by the number of slots available
 
-*Mid-square Method*
+**Mid-square Method**
 * Square the item, extract some portion of the resulting digits
 * Ex. 44 --> 44^2 = 1,936 --> extract middle two digits (93) --> 93 % 11 --> 5
 
-*Some string-based methods*
+**Some string-based methods**
 * "cat" --> ord('c') = 99... 'a' = 97, 't' = 116 --> 99 + 97+ 116 = 312 --> 312 % 11 = 4
 
 ```python
@@ -154,16 +154,16 @@ def hash(astring, tablesize):
 
 In the above example, anagrams will always get the same value so you can weight each character based on its position in the string.
 
-Ex. 99*1 + 97*2 + 116*3 = 641 % 11 = 3
+Ex. 99 * 1 + 97 * 2 + 116 * 3 = 641 % 11 = 3
 
 ### Collision Resolution
 
 Dealing with multiple pieces of data in each slot.
 
-*Open addressing*
-* Finding the next open slot (*rehashing*)... often through *linear probing*
+**Open addressing**
+* Finding the next open slot (*rehashing*)... often through **linear probing**
 * Use the same method for searching items
-* Problem because of *clustering*, when many collisions occur at the same hash value
+* Problem because of **clustering**, when many collisions occur at the same hash value
 * To avoid clustering you can skip slots
 
 ```
@@ -172,8 +172,8 @@ rehash(pos) = (pos + 1) % sizeoftable
 rehash(pos) = (pos + skip) % sizeoftable
 ```
 
-* *Quadratic probing*, instead of using a constant skip value you increment by squares of an incrementer
-* *Chaining*, linking collisions... however the problem is that searching gets more complicated the more collisions there
+* **Quadratic probing**, instead of using a constant skip value you increment by squares of an incrementer
+* **Chaining**, linking collisions... however the problem is that searching gets more complicated the more collisions there
 
 ### Analysis of Hashing
 
@@ -182,17 +182,23 @@ The most conceptually important part of analyzing hash functions is the load fac
 # Sorting
 
 ## O(n^2) in average cases
-1) Selection Sort
-2) Bubble Sort
-3) Insertion Sort
+1. Selection Sort
+2. Bubble Sort
+3. Insertion Sort
 
 ## Merge Sort
 
-[Mycodeschool Video](https://www.youtube.com/watch?v=TzeBrDU-JaY)
+1. Another "Divide and Conquer" algo
+2. Recursive
+3. Stable sorting algo: preserves relative order of items with same key
+4. NOT in-place: divide into sub-lists, takes up more memory... proportional to size of list (O(n) space complexity))
+5. O(nlogn) time complexity
+
+### [Mycodeschool Video](https://www.youtube.com/watch?v=TzeBrDU-JaY)
 * O(nlogn) in worst case (time)
-1) First, break array A into two halves (L and R)
-2) Second, have incrementers for each array: k, i, j respectively for A, L, R
-3) Third, have nL and NR be the lengths of L and R
+1. First, break array A into two halves (L and R)
+2. Second, have incrementers for each array: k, i, j respectively for A, L, R
+3. Third, have nL and NR be the lengths of L and R
 
 ```
 # will work through R & L until one is done
@@ -229,17 +235,49 @@ while(j < nR)
 
 mergesort(A)
 {
-n <- length(A)
-if(n < 2)
-	return # array is sorted, termination condition
-mid <- n / 2
-left <- array of size(mid)
-right <- array of size(n - mid)
+	n <- length(A)
+	if(n < 2)
+		return # array is sorted, termination / base condition
+	mid <- n / 2
+	# creating left and right sub-lists
+	left <- array of size(mid)
+	right <- array of size(n - mid)
 
+	# populating left and right sub-lists
+	for(i<-0 to mid - 1)
+		left[i] <- A[i]
+	for(i<-0 to n - 1)
+		right[i-mid] <- A[i]
 
-
+	# allowing for recursively feeding back in... left first, then right (recursive call)
+	# will traverse down the left side
+	mergesort(left)
+	# upon going back up the chain will handle right side
+	mergesort(right)
+	# to merge the sorted halves
+	merge(left, right, A)
 }
-
 ```
 
 ## Quick Sort
+
+
+
+### [Mycodeschool Video](https://www.youtube.com/watch?v=COk73cpQbFQ)
+
+1. Time is O(nlogn) - average case
+2. O(n^2) - worst case running time
+3. In-place (space efficient)
+
+Process
+1. First select **pivot-point**, which is any point in the array, separating a right and left side to the array
+2. Can now have a right and left side (as well as the pivot-point itself)... do not need auxilliary arrays
+3. Next, find a pivot-point in the sub-list (the largest number or right most number)
+4. Keep going until there is one element only... termination condition
+
+```
+Quicksort(A, start, end)
+{
+	
+}
+```
