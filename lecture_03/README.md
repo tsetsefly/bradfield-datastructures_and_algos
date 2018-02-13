@@ -269,15 +269,17 @@ mergesort(A)
 2. O(n^2) - worst case running time
 3. In-place (space efficient)
 
-Process
+### Process
 1. First select **pivot-point**, which is any point in the array, separating a right and left side to the array
 2. Can now have a right and left side (as well as the pivot-point itself)... do not need auxilliary arrays
 3. Next, find a pivot-point in the sub-list (the largest number or right most number)
 4. Keep going until there is one element only... termination condition
 
+![alt-text](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/01/QuickSort2.png "wahoo")
+
 ```
 Quicksort(A, start, end)
 {
-	
+
 }
 ```
