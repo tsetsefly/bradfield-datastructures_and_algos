@@ -77,12 +77,12 @@ Algorithm
 * Let distance of start vertex from start vertex = 0
 Let distance of all other vertices from start = infinity
 * Repeat
- * Visit the unvisited vertex with the smallest known distance from the start vertex
- * For the current vertex: examine its unvisited neighbors
- * For the current vertex: calculate distance of each neighbour from start vertex
- * If the calculated distance of a vertex is less than the known distance, update the shortest distance
- * Update the previous vertex for each of the updated distances
- * Add the current vertex to the list of veisited vertices
+  * Visit the unvisited vertex with the smallest known distance from the start vertex
+  * For the current vertex: examine its unvisited neighbors
+  * For the current vertex: calculate distance of each neighbour from start vertex
+  * If the calculated distance of a vertex is less than the known distance, update the shortest distance
+  * Update the previous vertex for each of the updated distances
+  * Add the current vertex to the list of veisited vertices
 * Until all vertices visited
 
 ```
