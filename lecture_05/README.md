@@ -75,7 +75,7 @@ Greedy algorithm: make locally optimal choices at each step in hopes that it hel
 
 Algorithm
 * Let distance of start vertex from start vertex = 0
-Let distance of all other vertices from start = infinity
+* Let distance of all other vertices from start = infinity
 * Repeat
   * Visit the unvisited vertex with the smallest known distance from the start vertex
   * For the current vertex: examine its unvisited neighbors
