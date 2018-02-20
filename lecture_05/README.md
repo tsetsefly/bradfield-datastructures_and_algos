@@ -69,7 +69,7 @@ example_graph = {
 # => {'U': 1, 'W': 2, 'V': 2, 'Y': 1, 'X': 0, 'Z': 2}
 ```
 
-### [Graph Data Structure 4. Dijkstra’s Shortest Path Algorithmj](https://www.youtube.com/watch?v=pVfj6mxhdMw)
+### [Graph Data Structure 4. Dijkstra’s Shortest Path Algorithm](https://www.youtube.com/watch?v=pVfj6mxhdMw)
 
 Greedy algorithm: make locally optimal choices at each step in hopes that it helps us find the globally optimzed solution (not always efficient)
 
