@@ -113,3 +113,6 @@ For a current node, consider all of its unvisited neighbors and calculate (dista
 
 ### [Dijkstra's Algorithm - Computerphile](https://www.youtube.com/watch?v=GazC3A4OQTE)
 
+## [A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
+
+Great article
