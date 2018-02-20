@@ -68,3 +68,48 @@ example_graph = {
 # calculate_distances(example_graph, 'X')
 # => {'U': 1, 'W': 2, 'V': 2, 'Y': 1, 'X': 0, 'Z': 2}
 ```
+
+### [Graph Data Structure 4. Dijkstra’s Shortest Path Algorithmj](https://www.youtube.com/watch?v=pVfj6mxhdMw)
+
+Greedy algorithm: make locally optimal choices at each step in hopes that it helps us find the globally optimzed solution (not always efficient)
+
+Algorithm
+* Let distance of start vertex from start vertex = 0
+Let distance of all other vertices from start = infinity
+* Repeat
+ * Visit the unvisited vertex with the smallest known distance from the start vertex
+ * For the current vertex: examine its unvisited neighbors
+ * For the current vertex: calculate distance of each neighbour from start vertex
+ * If the calculated distance of a vertex is less than the known distance, update the shortest distance
+ * Update the previous vertex for each of the updated distances
+ * Add the current vertex to the list of veisited vertices
+* Until all vertices visited
+
+```
+// pseudocode
+Let distance of start vertex from start vertex = 0
+Let distance of all other vertices from start = infinity
+
+WHILE verticies remain unvisited
+	Visit unviisted vertex with smallest known distance from start vertex / current vertex
+	FOR each unvisited neighbor
+		Calculate the distance from the start vertex
+		IF the caculated distance of this certex is less than the known distance
+			Update shortest distance to this vertex
+			Update the previous vertex with the current vertex
+		END
+	NEXT unvisited neighborhor
+	Add the current vertex to the list of visited vertices
+END
+```
+
+### [Dijkstra's Algorithm on Youtube](https://www.youtube.com/watch?v=gdmfOwyQlcI)
+
+Assign to every node a tentative distance value: set it to zero for our initial node and to infinity for all nodes.
+
+Keep a set of visited nodes. The set starts with just the initial node.
+
+For a current node, consider all of its unvisited neighbors and calculate (distance to the current node) + (distance from current node to the neighbor). If this is less than their current tentative distance, replace it with its new value.
+
+### [Dijkstra's Algorithm - Computerphile](https://www.youtube.com/watch?v=GazC3A4OQTE)
+
